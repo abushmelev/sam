@@ -1,0 +1,7 @@
+# Site navigation links
+
+- title: О чем это?
+  url: /about/
+
+- title: Заметки и статьи
+  url: /posts/
