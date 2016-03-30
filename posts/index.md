@@ -1,5 +1,5 @@
 ---
 layout: post-index
-title: All Posts
-excerpt: "A List of Posts"
+title: Все статьи
+excerpt: "Все статьи в обратном хронологическом порядке"
 ---
