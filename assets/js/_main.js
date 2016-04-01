@@ -64,4 +64,23 @@ $(document).ready(function() {
     // make it unique to apply your CSS animations just to this exact popup
     mainClass: 'mfp-fade'
   });
+    $('#calc-form').on('click', function() {
+ 
+        alert("qqq"); 
+        var checks = new Array();
+            checks.push("1");
+        var data=JSON.stringify(checks);
+        $.ajax({
+            type: 'GET',
+            url: "http://localhost/compress.php?op=1&srcprc=95&dstprc=30&srcvol=1000",
+            dataType: 'json',
+            cache: false,
+            data: {checks: data, func: 9},
+            success: function(data) {
+               var newarr = $.parseJSON(data);
+               alert(newarr);
+            }
+        });
+ 
+    });
 });
