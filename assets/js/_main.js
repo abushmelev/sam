@@ -64,21 +64,24 @@ $(document).ready(function() {
     // make it unique to apply your CSS animations just to this exact popup
     mainClass: 'mfp-fade'
   });
-    $('#calc-form').on('click', function() {
+    $('#calc-submit').click(function() {
  
-        alert("qqq"); 
-        var checks = new Array();
-            checks.push("1");
-        var data=JSON.stringify(checks);
+        alert('aaa');
         $.ajax({
-            type: 'GET',
-            url: "http://localhost/compress.php?op=1&srcprc=95&dstprc=30&srcvol=1000",
-            dataType: 'json',
+            type: 'POST',
+            url: "http://oede.ru/compress.php",
+            dataType: 'JSON',
             cache: false,
-            data: {checks: data, func: 9},
+            data: JSON.stringify( {
+                op: 1,
+                srcprc: 95,
+                dstprc: 30,
+                srcvol: 1000
+            }),
             success: function(data) {
                var newarr = $.parseJSON(data);
-               alert(newarr);
+               $("#watvol").text(newarr['watvol']);
+               //alert(newarr);
             }
         });
  
