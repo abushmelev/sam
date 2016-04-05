@@ -66,22 +66,24 @@ $(document).ready(function() {
   });
     $('#calc-submit').click(function() {
  
-        alert('aaa');
+        var urlpar = "http://oede.ru/compress.php?";
+        urlpar += "op="+$("#calc-op").val();
+        urlpar += "&srcprc="+$("#srcPrc").val();
+        urlpar += "&dstprc="+$("#dstPrc").val();
+        urlpar += "&srcvol="+$("#srcVol").val();
         $.ajax({
-            type: 'POST',
-            url: "http://oede.ru/compress.php",
-            dataType: 'JSON',
+            type: 'GET',
+            url: urlpar,
+            dataType: 'jsonp',
+            crossDomain: true,
             cache: false,
-            data: JSON.stringify( {
-                op: 1,
-                srcprc: 95,
-                dstprc: 30,
-                srcvol: 1000
-            }),
             success: function(data) {
-               var newarr = $.parseJSON(data);
-               $("#watvol").text(newarr['watvol']);
-               //alert(newarr);
+               var newarr = data[0];
+               $("#watVol").text(newarr['watvol'].toFixed(2));
+               $("#dstVol").text(newarr['dstvol'].toFixed(2));
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert("Status: " + textStatus); alert("Error: " + errorThrown); 
             }
         });
  
