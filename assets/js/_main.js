@@ -65,7 +65,7 @@ $(document).ready(function() {
     mainClass: 'mfp-fade'
   });
     $('#calc-submit').click(function() {
- 
+        $('#fountainTextG').show();
         var urlpar = "http://oede.ru/compress.php?";
         urlpar += "op="+$("#calc-op").val();
         urlpar += "&srcprc="+$("#srcPrc").val();
@@ -81,9 +81,11 @@ $(document).ready(function() {
                var newarr = data[0];
                $("#watVol").text(newarr['watvol'].toFixed(2));
                $("#dstVol").text(newarr['dstvol'].toFixed(2));
+               $('#fountainTextG').hide();
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+               $('#fountainTextG').hide();
             }
         });
  

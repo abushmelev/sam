@@ -4,6 +4,7 @@ title:            В поисках живительной влаги
 locale:           ru_RU
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://sam.oede.ru"
+#url:
 
 
 # Jekyll configuration
