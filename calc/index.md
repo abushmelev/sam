@@ -20,6 +20,8 @@ image:
     <input type="hidden" id="calc-op" value="1" />
   Для того, чтобы разбавить <span style="white-space:nowrap;"><input id="srcPrc" class="calc" type="text" name="srcPrc" value="95" required autofocus />% спирт</span> объёмом <input id="srcVol"  class="calc" type="text" name="srcVol" value="1000" required /> до <span style="white-space:nowrap;"><input id="dstPrc" class="calc" type="text" name="dstPrc" value="30" required />%</span><br />
 <input type="button" id="calc-submit" value="необходимо" name="submit" /> <span id="watVol">X</span> воды.<br /> А всего получится <span id="dstVol">Y</span> раствора.<br />
-</form>
 
+<div id="fountainTextG" hidden><div id="fountainTextG_1" class="fountainTextG">В</div><div id="fountainTextG_2" class="fountainTextG">ы</div><div id="fountainTextG_3" class="fountainTextG">ч</div><div id="fountainTextG_4" class="fountainTextG">и</div><div id="fountainTextG_5" class="fountainTextG">с</div><div id="fountainTextG_6" class="fountainTextG">л</div><div id="fountainTextG_7" class="fountainTextG">я</div><div id="fountainTextG_8" class="fountainTextG">ю</div></div><br />
+
+</form>
 
