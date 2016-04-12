@@ -90,4 +90,30 @@ $(document).ready(function() {
         });
  
     });
+    $('#calc-submit2').click(function() {
+        $('#calc2waiting').show();
+        var urlpar = "http://oede.ru/compress.php?";
+        urlpar += "op="+$("#calc-op2").val();
+        urlpar += "&srcprc="+$("#srcPrc2").val();
+        urlpar += "&dstprc="+$("#dstPrc2").val();
+        urlpar += "&dstvol="+$("#dstVol2").val();
+        $.ajax({
+            type: 'GET',
+            url: urlpar,
+            dataType: 'jsonp',
+            crossDomain: true,
+            cache: false,
+            success: function(data) {
+               var newarr = data[0];
+               $("#watVol2").text(newarr['watvol'].toFixed(2));
+               $("#srcVol2").text(newarr['srcvol'].toFixed(2));
+               $('#calc2waiting').hide();
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+               $('#calc2waiting').hide();
+            }
+        });
+ 
+    });
 });

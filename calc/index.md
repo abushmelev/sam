@@ -25,3 +25,18 @@ image:
 
 </form>
 
+---
+
+# Сколько долить, чтобы получить? #
+
+<form id="calc-form2" name="calc-form2">
+    <input type="hidden" id="calc-op2" value="2" />
+  Для того, чтобы из <span style="white-space:nowrap;"><input id="srcPrc2" class="calc" type="text" name="srcPrc2" value="95" required />% спирта</span> получить <input id="dstVol2" class="calc" type="text" name="srcVol2" value="1000" required /> <span style="white-space:nowrap;"><input id="dstPrc2" class="calc" type="text" name="dstPrc2" value="30" required />% раствора</span> <input type="button" id="calc-submit2" value="необходимо" name="submit" /> добавить <span id="watVol2">X</span> воды к <span id="srcVol2">Y</span> исходного раствора.<br />
+
+<span id="calc2waiting" hidden>
+Ждите! Идут сложнейшие вычисления!
+</span>
+<br />
+
+</form>
+
